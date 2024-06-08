@@ -1,0 +1,11 @@
+<Project>
+    <PropertyGroup>
+        <TargetFrameworkVersion>net6.0</TargetFrameworkVersion>
+        <AzureMessagingServiceBusVersion>7.12.0</AzureMessagingServiceBusVersion>
+		<MicrosoftExtensionsConfigurationVersion>6.0.1</MicrosoftExtensionsConfigurationVersion>
+		<MicrosoftExtensionsConfigurationFileExtensionsVersion>6.0.0</MicrosoftExtensionsConfigurationFileExtensionsVersion>
+		<MicrosoftExtensionsConfigurationJsonVersion>6.0.0</MicrosoftExtensionsConfigurationJsonVersion>
+		<MicrosoftExtensionsConfigurationUserSecretsVersion>6.0.1</MicrosoftExtensionsConfigurationUserSecretsVersion>
+		<NewtonsoftJsonVersion>13.0.2</NewtonsoftJsonVersion>
+   </PropertyGroup>
+</Project>

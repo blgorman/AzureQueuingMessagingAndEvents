@@ -1,0 +1,11 @@
+<Project>
+    <PropertyGroup>
+        <TargetFrameworkVersion>net8.0</TargetFrameworkVersion>
+        <AzureMessagingEventHubs>5.11.3</AzureMessagingEventHubs>
+        <AzureMessagingEventHubsProcessor>5.11.3</AzureMessagingEventHubsProcessor>
+        <MicrosoftExtensionsConfiguration>8.0.0</MicrosoftExtensionsConfiguration>
+        <MicrosoftExtensionsConfigurationFileExtensions>8.0.0</MicrosoftExtensionsConfigurationFileExtensions>
+        <MicrosoftExtensionsConfigurationJson>8.0.0</MicrosoftExtensionsConfigurationJson>
+        <MicrosoftExtensionsConfigurationUserSecrets>8.0.0</MicrosoftExtensionsConfigurationUserSecrets>
+    </PropertyGroup>
+</Project>

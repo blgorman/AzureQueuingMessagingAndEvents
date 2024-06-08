@@ -1,0 +1,11 @@
+<Project>
+    <PropertyGroup>
+        <TargetFrameworkVersion>net6.0</TargetFrameworkVersion>
+        <AzureMessagingEventHubs>5.7.5</AzureMessagingEventHubs>
+        <AzureMessagingEventHubsProcessor>5.7.5</AzureMessagingEventHubsProcessor>
+        <MicrosoftExtensionsConfiguration>6.0.1</MicrosoftExtensionsConfiguration>
+        <MicrosoftExtensionsConfigurationFileExtensions>6.0.0</MicrosoftExtensionsConfigurationFileExtensions>
+        <MicrosoftExtensionsConfigurationJson>6.0.0</MicrosoftExtensionsConfigurationJson>
+        <MicrosoftExtensionsConfigurationUserSecrets>6.0.1</MicrosoftExtensionsConfigurationUserSecrets>
+    </PropertyGroup>
+</Project>
