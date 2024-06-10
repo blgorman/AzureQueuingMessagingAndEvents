@@ -8,7 +8,7 @@ Hopefully, this talk/repo will help to clear these things up, as well as which s
 
 ## Presentation Slides  
 
-The slides are available to view on my personal training site (free). [You can view the slides here](https://training.majorguidancesolutions.com/courses/blog-posts-and-talks/contents/6664a6e3863a0). 
+The slides are available to view on my personal training site (free). [You can view the slides here](https://training.majorguidancesolutions.com/courses/blog-posts-and-talks/contents/6664a6e3863a0){:target="_blank"}. 
 
 ## Event Hub
 

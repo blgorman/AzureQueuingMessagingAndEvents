@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="azure-queueing-messaging-and-events">Azure Queueing Messaging and Events</h1>
+<p>In this repo you'll find the code and references for my talk on Azure Messaging, Queueing, and Event Services.</p>
+<p>When you first start working with Azure serverless solutions, it can be tricky to determine which solution is the best for messaging and event handling.  It can even be confusing as to what the Event Hub and Event Grid are and why you need both and why sometimes they are referenced by each other.</p>
+<p>Hopefully, this talk/repo will help to clear these things up, as well as which solution to use for messaging and queuing in various scenarios.</p>
+<h2 id="presentation-slides">Presentation Slides</h2>
+<p>The slides are available to view on my personal training site (free). <a href="https://training.majorguidancesolutions.com/courses/blog-posts-and-talks/contents/6664a6e3863a0">You can view the slides here</a>{:target=&quot;_blank&quot;}.</p>
+<h2 id="event-hub">Event Hub</h2>
+<p>The Azure Event Hub is your choice for Big Data stream ingestion into Azure.  Along with Event Hub, you have the IoT Hub, which is a subset of the Event Hub. If you have a stream of data coming in at hundreds or thousands of records per second, the Event Hub is your stream ingestion tool of choice.</p>
+<p>To create an event hub, you need a namespace.  You then place one or more hubs in the namespace.  The namespace determines the overall throughput and the hub determines how the data is separated and how many individual applications can read their own version of the data.</p>
+<p>Most importantly, the talk helps to shed light on the information in this table:</p>
+<p><a href="https://learn.microsoft.com/azure/service-bus-messaging/compare-messaging-services#comparison-of-services?WT.mc_id=AZ-MVP-5004334">Comparison of services</a></p>
+<p>References for Event Hub and the Event Hub Namespace from this talk include:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/azure/event-hubs/event-hubs-faq?WT.mc_id=AZ-MVP-5004334">FAQ - What is an Event Hub Namespace</a></li>
+<li><a href="https://learn.microsoft.com/azure/event-hubs/event-hubs-about?WT.mc_id=AZ-MVP-5004334">What is Azure Event Hub</a></li>
+<li><a href="https://learn.microsoft.com/azure/event-hubs/event-hubs-features?WT.mc_id=AZ-MVP-5004334">Event Hub Terminology</a></li>
+<li><a href="https://learn.microsoft.com/azure/event-hubs/event-hubs-capture-overview?WT.mc_id=AZ-MVP-5004334">Capture events to Azure Storage</a></li>
+<li><a href="https://learn.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-send?WT.mc_id=AZ-MVP-5004334&amp;tabs=passwordless%2Croles-azure-portal">Use .Net to send and receive events</a></li>
+</ul>
+<h2 id="event-grid">Event Grid</h2>
+<p>The Azure event grid is the tool of choice when events are fired at Azure and you need to respond.  Common examples are storage blobs created or virtual machines restarted.  Essentially, everything you do in Azure is monitored, and if you want to subscribe to the event you can likely make it happen.</p>
+<p>In some cases you will also choose to write your own custom events.  This is a bit trickier, but you can utilize the same data payload structure as a typical azure event to also create an event topic and subscription(s) to your custom events.</p>
+<ul>
+<li><a href="https://learn.microsoft.com/azure/event-grid/overview?WT.mc_id=AZ-MVP-5004334">What is Azure Event Grid</a></li>
+<li><a href="https://learn.microsoft.com/azure/event-grid/how-to-filter-events?WT.mc_id=AZ-MVP-5004334">How to filter events with event grid</a></li>
+<li><a href="https://learn.microsoft.com/azure/event-grid/delivery-and-retry?WT.mc_id=AZ-MVP-5004334">Event Grid message delivery and retry</a></li>
+<li><a href="https://learn.microsoft.com/azure/event-grid/manage-event-delivery?WT.mc_id=AZ-MVP-5004334">Dead Letter and Retry Policies</a></li>
+<li><a href="https://learn.microsoft.com/azure/event-grid/custom-event-quickstart?WT.mc_id=AZ-MVP-5004334">Quickstart: Custom event handling with Event Grid</a></li>
+</ul>
+<h2 id="service-bus">Service Bus</h2>
+<p>Service Bus has two types of use in Azure.  The first is simple pub/sub for messaging.  This is much easier than a custom event to implement, so if you just need to send information from one application to another in a disconnected fashion, you should likely choose service bus.</p>
+<p>Service bus topics can then be subscribed to from one or more consumers.  Each consumer can further filter the data they care about.  For example, you could have three apps all responding to blob storage, but each could be filtering for different things like a specific type of image or any file with a common prefix.  Finally, you could even filter to something like the container name or a custom subject that is included with the message.</p>
+<p>Service Bus Queues are the tool of choice when you need a guaranteed FIFO object at azure to ensure message processing is handled in the order the messages are received.  Once a queue is created, any application with the correct SAS for listening can consume messages from the Queue.  Any application with the SAS for writing can publish messages to the queue.</p>
+<ul>
+<li><a href="https://docs.microsoft.com/azure/service-bus-messaging/service-bus-queues-topics-subscriptions?WT.mc_id=AZ-MVP-5004334">Queues, Topics, and Subscriptions</a></li>
+<li><a href="https://learn.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues?WT.mc_id=AZ-MVP-5004334&amp;tabs=passwordless">Getting started with Queues</a></li>
+<li><a href="https://learn.microsoft.com/azure/service-bus-messaging/duplicate-detection?WT.mc_id=AZ-MVP-5004334">Duplicate Message Detection</a></li>
+<li><a href="https://learn.microsoft.com/azure/service-bus-messaging/service-bus-dead-letter-queues?WT.mc_id=AZ-MVP-5004334">Dead letter Queues</a></li>
+<li><a href="https://learn.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions?WT.mc_id=AZ-MVP-5004334&amp;tabs=passwordless">Topics and Subscriptions</a></li>
+<li><a href="https://learn.microsoft.com/azure/service-bus-messaging/topic-filters?WT.mc_id=AZ-MVP-5004334">Topic Filters and Actions</a></li>
+<li><a href="https://learn.microsoft.com/azure/service-bus-messaging/service-bus-filter-examples?WT.mc_id=AZ-MVP-5004334">Using Filters</a></li>
+<li><a href="https://learn.microsoft.com/azure/service-bus-messaging/service-bus-quotas?WT.mc_id=AZ-MVP-5004334">Service Bus Messaging Quotas</a></li>
+</ul>
+<h2 id="azure-storage-queue">Azure Storage Queue</h2>
+<p>The Azure storage queue is used to read and write messages similar to the service bus queue.  In storage queue, order cannot be guaranteed.  The messages in a storage queue are smaller than the messages in service bus, but storage queue can store millions of messages and they are automatically purged after 7 days.  Storage queue also has the ability for clients to take out a lease and if something fails the message goes back into the queue.</p>
+<ul>
+<li><a href="https://learn.microsoft.com/azure/storage/queues/storage-queues-introduction?WT.mc_id=AZ-MVP-5004334">What are Azure Storage Queues</a></li>
+<li><a href="https://learn.microsoft.com/azure/storage/queues/storage-quickstart-queues-dotnet?WT.mc_id=AZ-MVP-5004334&amp;tabs=passwordless%2Croles-azure-portal%2Cenvironment-variable-windows%2Csign-in-azure-cli">Working with Storage Queues</a></li>
+</ul>
+<h2 id="storage-queues-vs-service-bus-queues">Storage Queues vs Service Bus Queues</h2>
+<p><a href="https://learn.microsoft.com/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted?WT.mc_id=AZ-MVP-5004334">When do you use each one?</a></p>
+
+</body>
+</html>
