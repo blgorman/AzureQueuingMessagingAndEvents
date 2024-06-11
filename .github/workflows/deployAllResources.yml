@@ -1,8 +1,8 @@
-name: .NET
+name: TEST Action
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "nowayjose" ]
   workflow_dispatch:
 
 jobs:

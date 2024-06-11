@@ -22,9 +22,8 @@ env:
   DEPLOYMENT_NAME: 'aqme-resources-deployment'
 
 jobs:
-  deploy-all-aqme-resources:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
         
     steps:
     - uses: actions/checkout@v4
@@ -40,6 +39,8 @@ jobs:
 
     - name: Deploy Resources
       uses: Azure/arm-deploy@v2
+      env:
+        name: 'dev'
       with:
         scope: subscription
         subscriptionId: ${{ env.SECRET_SUBSCRIPTION_ID }}
