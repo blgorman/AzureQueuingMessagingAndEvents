@@ -1,0 +1,147 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "centralus"
+        },
+        "rgName": {
+            "value": "aqmetalk"
+        },
+        "storageNameHub": {
+            "value": "hubcoldstorage"
+        },
+        "storageNameEvents": {
+            "value": "triggerstorage"
+        },
+        "storageSku": {
+            "value": "Standard_LRS"
+        },
+        "allowBlobPublicAccess": {
+            "value": false
+        },
+        "allowSharedKeyAccess": {
+            "value": true
+        },
+        "storageTier": {
+            "value": "Cool"
+        },
+        "blobEncryptionEnabled": {
+            "value": true
+        },
+        "fileEncryptionEnabled": {
+            "value": true
+        },
+        "enableBlobRetention": {
+            "value": false
+        },
+        "blobRetentionDays": {
+            "value": 7
+        },
+        "capturedEventsBlobContainerName": {
+            "value": "capturedehevents"
+        },
+        "processedEventsBlobContainerName": {
+            "value": "processedehevents"
+        },
+        "enableHierarchicalNamespace": {
+            "value": true
+        },
+        "eventTriggerContainerName": {
+            "value": "uploads"
+        },
+        "eventHubProjectName": {
+            "value": "aqmetalk"
+        },
+        "eventHubSku": {
+            "value": "Standard"
+        },
+        "eventHubSKUCapacity": {
+            "value": 1
+        },
+        "isAutoInflateEnabled": {
+            "value": false
+        },
+        "disableLocalAuth": {
+            "value": false
+        },
+        "skipEmptyArchives": {
+            "value": true
+        },
+        "maximumThroughputUnits": {
+            "value": 0
+        },
+        "messageRetentionInDays": {
+            "value": 2
+        },
+        "partitionCount": {
+            "value": 4
+        },
+        "captureEnabled": {
+            "value": true
+        },
+        "captureEncodingFormat": {
+            "value": "Avro"
+        },
+        "captureTime": {
+            "value": 300
+        },
+        "captureSize": {
+            "value": 314572800
+        },
+        "captureNameFormat": {
+            "value": "{Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}"
+        },
+        "sbProjectName": {
+            "value": "aqmetalk"
+        },
+        "serviceBusSku": {
+            "value": "Standard"
+        },
+        "serviceBusQueueName": {
+            "value": "FileProcessingQueue"
+        },
+        "serviceBusTopicName": {
+            "value": "MoviesToReview"
+        },
+        "lockDuration": {
+            "value": "PT5M"
+        },
+        "maxSizeInMegabytes": {
+            "value": 1024
+        },
+        "requiresDuplicateDetection": {
+            "value": false
+        },
+        "requiresSession": {
+            "value": false
+        },
+        "defaultMessageTimeToLive": {
+            "value": "P10675199DT2H48M5.4775807S"
+        },
+        "deadLetteringOnMessageExpiration": {
+            "value": false
+        },
+        "duplicateDetectionHistoryTimeWindow": {
+            "value": "PT10M"
+        },
+        "maxDeliveryCount": {
+            "value": 10
+        },
+        "autoDeleteOnIdle": {
+            "value": "P10675199DT2H48M5.4775807S"
+        },
+        "enablePartitioning": {
+            "value": false
+        },
+        "enableExpress": {
+            "value": false
+        },
+        "enableBatchedOperations": {
+            "value": true
+        },
+        "supportOrdering": {
+            "value": true
+        }
+    }
+}

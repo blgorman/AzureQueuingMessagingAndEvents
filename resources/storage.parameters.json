@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "centralus"
+        },
+        "storageNameHub": {
+            "value": "hubcoldstorage"
+        },
+        "storageNameEvents": {
+            "value": "triggerstorage"
+        },
+        "storageSku": {
+            "value": "Standard_LRS"
+        },
+        "allowBlobPublicAccess": {
+            "value": false
+        },
+        "allowSharedKeyAccess": {
+            "value": true
+        },
+        "storageTier": {
+            "value": "Cool"
+        },
+        "blobEncryptionEnabled": {
+            "value": true
+        },
+        "fileEncryptionEnabled": {
+            "value": true
+        },
+        "enableBlobRetention": {
+            "value": false
+        },
+        "blobRetentionDays": {
+            "value": 7
+        },
+        "capturedEventsBlobContainerName": {
+            "value": "capturedehevents"
+        },
+        "processedEventsBlobContainerName": {
+            "value": "processedehevents"
+        },
+        "enableHierarchicalNamespace": {
+            "value": true
+        },
+        "eventTriggerContainerName": {
+            "value": "uploads"
+        }
+    }
+}

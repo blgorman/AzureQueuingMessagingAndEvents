@@ -1,0 +1,57 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "centralus"
+        },
+        "storageName": {
+            "value": "hubcoldstorage"
+        },
+        "captureBlobContainerName": {
+            "value": "capturedehevents"
+        },
+        "eventHubProjectName": {
+            "value": "aqmetalk"
+        },
+        "eventHubSku": {
+            "value": "Standard"
+        },
+        "eventHubSKUCapacity": {
+            "value": 1
+        },
+        "isAutoInflateEnabled": {
+            "value": false
+        },
+        "disableLocalAuth": {
+            "value": false
+        },
+        "skipEmptyArchives": {
+            "value": true
+        },
+        "maximumThroughputUnits": {
+            "value": 0
+        },
+        "messageRetentionInDays": {
+            "value": 2
+        },
+        "partitionCount": {
+            "value": 4
+        },
+        "captureEnabled": {
+            "value": true
+        },
+        "captureEncodingFormat": {
+            "value": "Avro"
+        },
+        "captureTime": {
+            "value": 300
+        },
+        "captureSize": {
+            "value": 314572800
+        },
+        "captureNameFormat": {
+            "value": "{Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}"
+        }
+    }
+}

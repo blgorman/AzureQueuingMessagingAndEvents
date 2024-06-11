@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "centralus"
+        },
+        "sbProjectName": {
+            "value": "aqmetalk"
+        },
+        "serviceBusSku": {
+            "value": "Standard"
+        },
+        "serviceBusQueueName": {
+            "value": "FileProcessingQueue"
+        },
+        "serviceBusTopicName": {
+            "value": "MoviesToReview"
+        },
+        "lockDuration": {
+            "value": "PT5M"
+        },
+        "maxSizeInMegabytes": {
+            "value": 1024
+        },
+        "requiresDuplicateDetection": {
+            "value": false
+        },
+        "requiresSession": {
+            "value": false
+        },
+        "defaultMessageTimeToLive": {
+            "value": "P10675199DT2H48M5.4775807S"
+        },
+        "deadLetteringOnMessageExpiration": {
+            "value": false
+        },
+        "duplicateDetectionHistoryTimeWindow": {
+            "value": "PT10M"
+        },
+        "maxDeliveryCount": {
+            "value": 10
+        },
+        "autoDeleteOnIdle": {
+            "value": "P10675199DT2H48M5.4775807S"
+        },
+        "enablePartitioning": {
+            "value": false
+        },
+        "enableExpress": {
+            "value": false
+        },
+        "enableBatchedOperations": {
+            "value": true
+        },
+        "supportOrdering": {
+            "value": true
+        }
+    }
+}
