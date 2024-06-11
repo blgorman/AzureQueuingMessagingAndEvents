@@ -103,6 +103,67 @@ resource serviceBusTopicResource 'Microsoft.ServiceBus/namespaces/topics@2017-04
   }
 }
 
+resource queueConsumerSAS 'Microsoft.ServiceBus/namespaces/queues/authorizationRules@2022-10-01-preview' = {
+  parent: serviceBusQueueResource
+  name: 'Consumer'
+  properties: {
+    rights: [
+      'Listen'
+    ]
+  }
+  dependsOn: [
+    serviceBusNamespaceResource
+    serviceBusQueueResource
+  ]
+}
+
+resource queueProducerSAS 'Microsoft.ServiceBus/namespaces/queues/authorizationRules@2022-10-01-preview' = {
+  parent: serviceBusQueueResource
+  name: 'Producer'
+  properties: {
+    rights: [
+      'Send'
+    ]
+  }
+  dependsOn: [
+    serviceBusNamespaceResource
+    serviceBusQueueResource
+    queueConsumerSAS
+  ]
+}
+
+resource topicConsumerSAS 'Microsoft.ServiceBus/namespaces/topics/authorizationrules@2022-10-01-preview' = {
+  parent: serviceBusTopicResource
+  name: 'Consumer'
+  properties: {
+    rights: [
+      'Listen'
+    ]
+  }
+  dependsOn: [
+    serviceBusNamespaceResource
+    serviceBusTopicResource
+    queueProducerSAS
+  ]
+}
+
+resource topicProducerSAS 'Microsoft.ServiceBus/namespaces/topics/authorizationrules@2022-10-01-preview' = {
+  parent: serviceBusTopicResource
+  name: 'Producer'
+  properties: {
+    rights: [
+      'Send'
+    ]
+  }
+  dependsOn: [
+    serviceBusNamespaceResource
+    serviceBusTopicResource
+    queueConsumerSAS
+    queueProducerSAS
+    topicConsumerSAS
+  ]
+}
+
 /** All of this is done in code but wanted to capture it in IAC **/
 // @description('Name of the Subscription')
 // param serviceBusSubscriptionAllMovies string = 'AllMovies'
@@ -141,3 +202,7 @@ output sbTopicId string = serviceBusTopicResource.id
 output sbNamespaceName string = serviceBusNamespaceResource.name
 output sbQueueName string = serviceBusQueueResource.name
 output sbTopicName string = serviceBusTopicResource.name
+output sbTopicConsumerSASID string = topicConsumerSAS.id
+output sbTopicProducerSASID string = topicProducerSAS.id
+output sbQueueConsumerSASID string = queueConsumerSAS.id
+output sbQueueProducerSASID string = queueProducerSAS.id

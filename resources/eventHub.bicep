@@ -118,9 +118,40 @@ resource eventHub 'Microsoft.EventHub/Namespaces/eventhubs@2017-04-01' = {
   }
 }
 
+resource hubConsumerSAS 'Microsoft.EventHub/namespaces/eventhubs/authorizationrules@2024-01-01' = {
+  parent: eventHub
+  name: 'Consumer'
+  properties: {
+    rights: [
+      'Listen'
+    ]
+  }
+  dependsOn: [
+    eventHub
+    eventHubNamespace
+  ]
+}
+
+resource hubProducerSAS 'Microsoft.EventHub/namespaces/eventhubs/authorizationrules@2024-01-01' = {
+  parent: eventHub
+  name: 'Producer'
+  properties: {
+    rights: [
+      'Send'
+    ]
+  }
+  dependsOn: [
+    eventHub
+    eventHubNamespace
+    hubConsumerSAS
+  ]
+}
+
 output eventHubNamespaceName string = eventHubNamespace.name
 output eventHubNamespaceId string = eventHubNamespace.id
 output eventHubName string = eventHub.name
 output eventHubId string = eventHub.id
 output authRuleResourceId string = authRuleResourceId
+output eventHubConsumerSASId string = hubConsumerSAS.id
+output eventHubProducerSASId string = hubProducerSAS.id
 
