@@ -1,4 +1,4 @@
-name: Deploy Infrastructure for AQME Talk
+name: Deploy Infrastructure for AQME Talk  
 
 on:
   push:
