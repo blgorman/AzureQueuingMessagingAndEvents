@@ -16,8 +16,8 @@ env:
   SECRET_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
   SECRET_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
   SECRET_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID  }}
-  TEMPLATE_FILE_PATH: 'resources\allMessagingResources.bicep'
-  PARAMETERS_FILE_PATH: 'resources\allMessagingResources.parameters.json'
+  TEMPLATE_FILE_PATH: 'resources/allMessagingResources.bicep'
+  PARAMETERS_FILE_PATH: 'resources/allMessagingResources.parameters.json'
   DEPLOYMENT_NAME: 'aqme-resources-deployment'
 
 jobs:
