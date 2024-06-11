@@ -37,7 +37,7 @@ jobs:
         subscription-id: ${{ env.SECRET_SUBSCRIPTION_ID }}
 
     - name: Deploy Resources
-      uses: Azure/arm-deploy@v2
+      uses: Azure/arm-deploy@v1.0.9
       with:
         scope: subscription
         subscriptionId: ${{ env.SECRET_SUBSCRIPTION_ID }}
