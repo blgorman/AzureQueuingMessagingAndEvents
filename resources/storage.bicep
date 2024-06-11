@@ -64,7 +64,7 @@ param enableHierarchicalNamespace bool = true
 param eventTriggerContainerName string = 'uploads'
 
 @description('The storage account.  Toggle the public access to true if you want public blobs on the account in any containers')
-resource hubstorage 'Microsoft.Storage/storageAccounts@2023-04-01' = {
+resource hubstorage 'Microsoft.Storage/storageAccounts@2023-05-01' = {
   name: storageAccountNameHub
   location: location
   kind: 'StorageV2'
@@ -90,7 +90,7 @@ resource hubstorage 'Microsoft.Storage/storageAccounts@2023-04-01' = {
   }
 }
 
-resource blobServices 'Microsoft.Storage/storageAccounts/blobServices@2023-04-01' = {
+resource blobServices 'Microsoft.Storage/storageAccounts/blobServices@2023-05-01' = {
   parent: hubstorage
   name: 'default'
   properties: {
@@ -102,7 +102,7 @@ resource blobServices 'Microsoft.Storage/storageAccounts/blobServices@2023-04-01
 }
 
 // Create the eh auto-capture container
-resource capturedEventsContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-04-01' = {
+resource capturedEventsContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-05-01' = {
   name: capturedEventsBlobContainerName
   parent: blobServices
   properties: {
@@ -112,7 +112,7 @@ resource capturedEventsContainer 'Microsoft.Storage/storageAccounts/blobServices
 }
 
 // Create the code processed events storage container
-resource processedEventsContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-04-01' = {
+resource processedEventsContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-05-01' = {
   name: processedEventsBlobContainerName
   parent: blobServices
   properties: {
@@ -122,7 +122,7 @@ resource processedEventsContainer 'Microsoft.Storage/storageAccounts/blobService
 }
 
 @description('The event trigger storage account.')
-resource eventStorage 'Microsoft.Storage/storageAccounts@2023-04-01' = {
+resource eventStorage 'Microsoft.Storage/storageAccounts@2023-05-01' = {
   name: storageAccountNameEvents
   location: location
   kind: 'StorageV2'
@@ -148,7 +148,7 @@ resource eventStorage 'Microsoft.Storage/storageAccounts@2023-04-01' = {
   }
 }
 
-resource blobServicesEvents 'Microsoft.Storage/storageAccounts/blobServices@2023-04-01' = {
+resource blobServicesEvents 'Microsoft.Storage/storageAccounts/blobServices@2023-05-01' = {
   parent: eventStorage
   name: 'default'
   properties: {
@@ -160,7 +160,7 @@ resource blobServicesEvents 'Microsoft.Storage/storageAccounts/blobServices@2023
 }
 
 // Create the cool storage container
-resource eventTriggerContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-04-01' = {
+resource eventTriggerContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-05-01' = {
   name: eventTriggerContainerName
   parent: blobServicesEvents
   properties: {

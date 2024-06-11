@@ -69,7 +69,7 @@ param captureTime int = 300
 param captureSize int = 314572800
 
 @description('A Capture Name Format must contain {Namespace}, {EventHub}, {PartitionId}, {Year}, {Month}, {Day}, {Hour}, {Minute} and {Second} fields. These can be arranged in any order with or without delimeters. E.g.  Prod_{EventHub}/{Namespace}\\{PartitionId}_{Year}_{Month}/{Day}/{Hour}/{Minute}/{Second}')
-param captureNameFormat string = '{Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}'
+var captureNameFormat = '{Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}'
 
 var eventHubNamespaceName = substring('${eventHubProjectName}ehns${uniqueString(resourceGroup().id)}', 0, 24)
 var eventHubName = '${eventHubProjectName}hub'

@@ -131,9 +131,6 @@ param captureTime int = 300
 @maxValue(524288000)
 param captureSize int = 314572800
 
-@description('A Capture Name Format must contain {Namespace}, {EventHub}, {PartitionId}, {Year}, {Month}, {Day}, {Hour}, {Minute} and {Second} fields. These can be arranged in any order with or without delimeters. E.g.  Prod_{EventHub}/{Namespace}\\{PartitionId}_{Year}_{Month}/{Day}/{Hour}/{Minute}/{Second}')
-param captureNameFormat string = '{Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}'
-
 /* Service Bus */
 @description('Specifies a project name that is used to generate the Event Hub name and the Namespace name.')
 param sbProjectName string = 'aqmetalk'
@@ -243,7 +240,6 @@ module deployEventHub 'eventHub.bicep' = {
     captureEncodingFormat: captureEncodingFormat
     captureTime: captureTime
     captureSize: captureSize
-    captureNameFormat: captureNameFormat
   }
 }
 
