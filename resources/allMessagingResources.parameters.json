@@ -6,7 +6,7 @@
             "value": "centralus"
         },
         "rgName": {
-            "value": "aqmetalk"
+            "value": "AzureQueuingMessagingAndEventsRG"
         },
         "storageNameHub": {
             "value": "hubcoldstorage"
