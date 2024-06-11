@@ -111,10 +111,6 @@ resource queueConsumerSAS 'Microsoft.ServiceBus/namespaces/queues/authorizationR
       'Listen'
     ]
   }
-  dependsOn: [
-    serviceBusNamespaceResource
-    serviceBusQueueResource
-  ]
 }
 
 resource queueProducerSAS 'Microsoft.ServiceBus/namespaces/queues/authorizationRules@2022-10-01-preview' = {
@@ -126,8 +122,6 @@ resource queueProducerSAS 'Microsoft.ServiceBus/namespaces/queues/authorizationR
     ]
   }
   dependsOn: [
-    serviceBusNamespaceResource
-    serviceBusQueueResource
     queueConsumerSAS
   ]
 }
@@ -141,8 +135,6 @@ resource topicConsumerSAS 'Microsoft.ServiceBus/namespaces/topics/authorizationr
     ]
   }
   dependsOn: [
-    serviceBusNamespaceResource
-    serviceBusTopicResource
     queueProducerSAS
   ]
 }
@@ -156,8 +148,6 @@ resource topicProducerSAS 'Microsoft.ServiceBus/namespaces/topics/authorizationr
     ]
   }
   dependsOn: [
-    serviceBusNamespaceResource
-    serviceBusTopicResource
     queueConsumerSAS
     queueProducerSAS
     topicConsumerSAS

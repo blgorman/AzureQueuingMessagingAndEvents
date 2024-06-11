@@ -45,4 +45,4 @@ jobs:
         template: '${{ env.TEMPLATE_FILE_PATH }}'
         parameters: '${{ env.PARAMETERS_FILE_PATH }}'
         deploymentName: '${{env.DEPLOYMENT_NAME}}-${{github.run_number}}'
-        failOnStdErr: false
+        failOnStdErr: true

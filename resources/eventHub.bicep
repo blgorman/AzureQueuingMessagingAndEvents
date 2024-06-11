@@ -126,10 +126,6 @@ resource hubConsumerSAS 'Microsoft.EventHub/namespaces/eventhubs/authorizationru
       'Listen'
     ]
   }
-  dependsOn: [
-    eventHub
-    eventHubNamespace
-  ]
 }
 
 resource hubProducerSAS 'Microsoft.EventHub/namespaces/eventhubs/authorizationrules@2024-01-01' = {
@@ -141,8 +137,6 @@ resource hubProducerSAS 'Microsoft.EventHub/namespaces/eventhubs/authorizationru
     ]
   }
   dependsOn: [
-    eventHub
-    eventHubNamespace
     hubConsumerSAS
   ]
 }
