@@ -24,8 +24,6 @@ env:
 jobs:
   deploy-all-aqme-resources:
     runs-on: ubuntu-latest
-    environment: 
-      name: ${{ env.ENVIRONMENT_NAME }}
         
     steps:
     - uses: actions/checkout@v4
