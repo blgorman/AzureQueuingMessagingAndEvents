@@ -6,7 +6,7 @@
             "value": "centralus"
         },
         "rgName": {
-            "value": "AzureQueuingMessagingAndEventsRG"
+            "value": "AQMETalk-NDCOslo-20240613"
         },
         "storageNameHub": {
             "value": "hubcoldstorage"
@@ -51,7 +51,7 @@
             "value": "uploads"
         },
         "eventHubProjectName": {
-            "value": "aqmetalk"
+            "value": "aqmendcoslo"
         },
         "eventHubSku": {
             "value": "Standard"
@@ -90,7 +90,7 @@
             "value": 314572800
         },
         "sbProjectName": {
-            "value": "aqmetalk"
+            "value": "aqmendcoslo"
         },
         "serviceBusSku": {
             "value": "Standard"
