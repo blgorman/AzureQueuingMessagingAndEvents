@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "FileProcessingFunctions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7031",
+      "launchBrowser": false
+    }
+  }
+}
